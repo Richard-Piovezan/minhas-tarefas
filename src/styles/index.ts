@@ -19,14 +19,23 @@ const GlobalStyle = createGlobalStyle`
     --color-text-subtle: #C7C3C0;
 
     --color-btn-save: #3B7D67;
+    --color-btn-save-hover: #4C9C7E;
+
     --color-btn-cancel: #A14A4A;
-    --color-btn-edit: #2E3B54;
+    --color-btn-cancel-hover: #BA5C5C;
 
+    --color-btn-edit: #303030;
+    --color-btn-edit-hover: #373737;
+
+    --color-tag-completed-bg: #3B7D67;
     --color-tag-important-bg: #BF967E;
-    --color-tag-important-text: #0D1326;
-
+    --color-tag-neutral-bg: #2E3B54;
+    --color-tag-all-bg: #1A2440;
     --color-tag-pending-bg: #3A4A68;
-    --color-tag-pending-text: #F2EEEB;
+    --color-tag-urgent-bg: #A14A4A;
+
+    --color-tag-text: #F2EEEB;
+
   }
 
   * {

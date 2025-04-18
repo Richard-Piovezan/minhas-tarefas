@@ -17,7 +17,7 @@ const tasks = [
   {
     title: 'Interagir com futuros clientes',
     description:
-      'Interagir, trocar conhecimentos, com potênciais futuros clientes',
+      'Interagir, trocar conhecimentos com potênciais futuros clientes',
     priority: 'importante',
     status: 'pendente'
   }
