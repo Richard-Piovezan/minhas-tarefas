@@ -1,19 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  outline: none;
-  border: none;
-  list-style: none;
-  font-family: var(--font-roboto);
-  color: var(--color-text-main);
-  }
-
   :root {
-    --font-roboto: Roboto, sans-serif;
+    --font-primary: Roboto, sans-serif;
+    --font-secondary: 'Roboto Mono', monospace;
 
     --color-bg-main: #0D1326;
     --color-bg-sidebar: #1A2440;
@@ -39,6 +29,16 @@ const GlobalStyle = createGlobalStyle`
     --color-tag-pending-text: #F2EEEB;
   }
 
+  * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  list-style: none;
+  font-family: var(--font-primary);
+  color: var(--color-text-main);
+  }
 
   body {
     background-color: var(--color-bg-main);
