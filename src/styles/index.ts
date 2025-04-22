@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
     --color-tag-completed-bg: #3B7D67;
     --color-tag-important-bg: #BF967E;
-    --color-tag-neutral-bg: #2E3B54;
+    --color-tag-neutral-bg:rgba(115, 145, 201, 0.76);
     --color-tag-all-bg: #1A2440;
     --color-tag-pending-bg: #3A4A68;
     --color-tag-urgent-bg: #A14A4A;

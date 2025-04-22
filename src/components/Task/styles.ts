@@ -1,18 +1,25 @@
 import styled from 'styled-components'
+import * as enums from '../../utils/enums/Task'
 
 type TagProps = {
-  priority?: string
-  status?: string
+  priority?: enums.Priority
+  status?: enums.Status
+  parameter: 'status' | 'priority'
 }
 
 function returnBGColor(props: TagProps): string {
-  if ('status' in props) {
-    if (props.status === 'pendente') return 'var(--color-tag-pending-bg)'
-    if (props.status === 'concluída') return 'var(--color-tag-completed-bg)'
-  } else if ('priority' in props) {
-    if (props.priority === 'urgente') return 'var(--color-tag-urgent-bg)'
-    if (props.priority === 'importante') return 'var(--color-tag-important-bg)'
-    if (props.priority === 'normal') return 'var(--color-tag-neutral-bg)'
+  if (props.parameter === 'status') {
+    if (props.status === enums.Status.PENDING)
+      return 'var(--color-tag-pending-bg)'
+    if (props.status === enums.Status.COMPLETED)
+      return 'var(--color-tag-completed-bg)'
+  } else {
+    if (props.priority === enums.Priority.URGENT)
+      return 'var(--color-tag-urgent-bg)'
+    if (props.priority === enums.Priority.IMPORTANT)
+      return 'var(--color-tag-important-bg)'
+    if (props.priority === enums.Priority.NEUTRAL)
+      return 'var(--color-tag-neutral-bg)'
   }
 
   return 'var(--color-btn-edit)'
@@ -27,7 +34,7 @@ export const Card = styled.div`
 `
 
 export const Title = styled.h3`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: var(--color-card-title);
   margin-bottom: 16px;
@@ -37,7 +44,7 @@ export const Tag = styled.span<TagProps>`
   padding: 4px 8px;
   font-weight: bold;
   font-size: 10px;
-  color: var(--color-text-main);
+  color: var(--color-tag-text);
   background-color: ${(props) => returnBGColor(props)};
   text-transform: capitalize;
   border-radius: 8px;
