@@ -3,6 +3,7 @@ import CardFilter from '../../components/CardFilter'
 import * as S from './styles'
 import { RootReducer } from '../../store'
 import { changeTerm } from '../../store/reducers/filter'
+import * as enums from '../../utils/enums/Task'
 
 const SideBar = () => {
   const dispatch = useDispatch()
@@ -18,12 +19,32 @@ const SideBar = () => {
           onChange={(e) => dispatch(changeTerm(e.target.value))}
         />
         <S.Filters>
-          <CardFilter subtitle="pendentes" count={1} />
-          <CardFilter subtitle="concluídas" count={2} />
-          <CardFilter subtitle="urgentes" count={3} />
-          <CardFilter subtitle="importantes" count={4} />
-          <CardFilter subtitle="neutras" count={5} />
-          <CardFilter subtitle="todas" count={15} active />
+          <CardFilter
+            value={enums.Priority.URGENT}
+            critery="priority"
+            subtitle="urgentes"
+          />
+          <CardFilter
+            value={enums.Status.COMPLETED}
+            critery="status"
+            subtitle="concluídas"
+          />
+          <CardFilter
+            value={enums.Priority.IMPORTANT}
+            critery="priority"
+            subtitle="importantes"
+          />
+          <CardFilter
+            value={enums.Status.PENDING}
+            critery="status"
+            subtitle="pendentes"
+          />
+          <CardFilter
+            value={enums.Priority.NEUTRAL}
+            critery="priority"
+            subtitle="neutras"
+          />
+          <CardFilter critery="all" subtitle="todas" />
         </S.Filters>
       </div>
     </S.ASide>

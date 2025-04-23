@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { Props } from '.'
 
-type PropsNoSubtitleAndCount = Omit<Props, 'count' | 'subtitle'>
+type Props = {
+  active: boolean
+}
 
-export const Card = styled.div<PropsNoSubtitleAndCount>`
+export const Card = styled.div<Props>`
   padding: 8px;
   border: 1px solid
     ${(props) =>
