@@ -17,7 +17,7 @@ const ToDoList = () => {
         (item) => item.title.toLowerCase().search(term.toLowerCase()) >= 0
       )
 
-      if (critery === 'priority') {
+      if (critery === 'prioridade') {
         filtredTasks = filtredTasks.filter((item) => item.priority === value)
       } else if (critery === 'status') {
         filtredTasks = filtredTasks.filter((item) => item.status === value)
@@ -29,18 +29,40 @@ const ToDoList = () => {
     }
   }
 
+  const showFilterResult = (amount: number) => {
+    let message = ''
+    const complement =
+      term !== undefined && term.length > 0 ? `e "${term}"` : ''
+
+    if (critery === 'todas') {
+      if (amount > 1) {
+        message = `${amount} tarefas encontradas com todas ${complement}`
+      } else if (amount === 0) {
+        message = `nenhuma tarefa encontrada com todas ${complement}`
+      } else {
+        message = `${amount} tarefa encontrada com todas ${complement}`
+      }
+    } else {
+      if (amount > 1) {
+        message = `${amount} tarefas encontradas com "${`${critery} ${value}`}" ${complement}`
+      } else if (amount === 0) {
+        message = `nenhuma tarefa encontrada com "${`${critery} ${value}`}" ${complement}`
+      } else {
+        message = `${amount} tarefa encontrada com "${`${critery} ${value}`}" ${complement}`
+      }
+    }
+
+    return message
+  }
+
+  const tasks = taskFilter()
+  const message = showFilterResult(tasks.length)
+
   return (
     <S.Main>
-      <p>
-        2 tarefas marcadas como: &quot;categoria&ldquo; e &quot;{term}&ldquo;
-      </p>
+      <S.Result>{message}</S.Result>
       <ul>
-        <li>{term}</li>
-        <li>{critery}</li>
-        <li>{value}</li>
-      </ul>
-      <ul>
-        {taskFilter().map((t) => (
+        {tasks.map((t) => (
           <li key={t.title}>
             <Task
               title={t.title}

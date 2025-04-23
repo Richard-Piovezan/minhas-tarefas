@@ -3,13 +3,13 @@ import * as enums from '../../utils/enums/Task'
 
 type FilterState = {
   term?: string
-  critery: 'priority' | 'status' | 'all'
+  critery: 'prioridade' | 'status' | 'todas'
   value?: enums.Priority | enums.Status
 }
 
 const initialState: FilterState = {
   term: '',
-  critery: 'all'
+  critery: 'todas'
 }
 
 const sliceFilter = createSlice({

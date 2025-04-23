@@ -21,7 +21,7 @@ const SideBar = () => {
         <S.Filters>
           <CardFilter
             value={enums.Priority.URGENT}
-            critery="priority"
+            critery="prioridade"
             subtitle="urgentes"
           />
           <CardFilter
@@ -31,7 +31,7 @@ const SideBar = () => {
           />
           <CardFilter
             value={enums.Priority.IMPORTANT}
-            critery="priority"
+            critery="prioridade"
             subtitle="importantes"
           />
           <CardFilter
@@ -41,10 +41,10 @@ const SideBar = () => {
           />
           <CardFilter
             value={enums.Priority.NEUTRAL}
-            critery="priority"
+            critery="prioridade"
             subtitle="neutras"
           />
-          <CardFilter critery="all" subtitle="todas" />
+          <CardFilter critery="todas" subtitle="todas" />
         </S.Filters>
       </div>
     </S.ASide>
