@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     --color-accent-gold: #D9AC84;
 
     --color-bg-card: #222F4C;
+    --color-bg-card-hover:rgb(42, 55, 85);
     --color-card-title: #D9AC84;
     --color-card-subtitle: #AFA9A3;
     --color-card-border: #2C3959;

@@ -31,11 +31,18 @@ export const Card = styled.div`
   padding: 16px;
   margin-bottom: 32px;
   border-radius: 16px;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 3px 8px;
+    background-color: var(--color-bg-card-hover);
+  }
 `
 
 export const Title = styled.h3`
   font-size: 20px;
   font-weight: bold;
+  text-transform: capitalize;
   color: var(--color-card-title);
   margin-bottom: 16px;
 `
@@ -49,7 +56,7 @@ export const Tag = styled.span<TagProps>`
   text-transform: capitalize;
   border-radius: 8px;
   display: inline-block;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
 
   &:not(:last-child) {
     margin-right: 16px;
@@ -82,6 +89,7 @@ export const Button = styled.button`
   background-color: var(--color-btn-edit);
   border-radius: 8px;
   transition: ease 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
 
   &:not(:last-child) {
     margin-right: 8px;
@@ -89,6 +97,8 @@ export const Button = styled.button`
 
   &:hover {
     background-color: var(--color-btn-edit-hover);
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 8px;
   }
 `
 export const SaveButton = styled(Button)`
