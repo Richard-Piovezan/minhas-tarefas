@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import * as enums from '../../utils/enums/Task'
+import { Button } from '../../styles'
 
 type TagProps = {
   priority?: enums.Priority
@@ -33,6 +34,12 @@ export const Card = styled.div`
   border-radius: 16px;
   transition: 0.3s;
 
+  label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.8) 0px 3px 8px;
     background-color: var(--color-bg-card-hover);
@@ -44,7 +51,7 @@ export const Title = styled.h3`
   font-weight: bold;
   text-transform: capitalize;
   color: var(--color-card-title);
-  margin-bottom: 16px;
+  margin-left: 8px;
 `
 
 export const Tag = styled.span<TagProps>`
@@ -80,39 +87,15 @@ export const ActionBar = styled.div`
   padding: 16px 0 8px;
 `
 
-export const Button = styled.button`
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--color-text-main);
-  padding: 6px 12px;
-  cursor: pointer;
-  background-color: var(--color-btn-edit);
-  border-radius: 8px;
-  transition: ease 0.3s;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-
-  &:not(:last-child) {
-    margin-right: 8px;
-  }
-
-  &:hover {
-    background-color: var(--color-btn-edit-hover);
-    text-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 8px;
-  }
-`
-export const SaveButton = styled(Button)`
-  background-color: var(--color-btn-save);
-
-  &:hover {
-    background-color: var(--color-btn-save-hover);
-  }
-`
-
 export const CancelRemoveButton = styled(Button)`
   background-color: var(--color-btn-cancel);
 
   &:hover {
     background-color: var(--color-btn-cancel-hover);
   }
+`
+
+export const Editing = styled.span`
+  font-style: italic;
+  color: var(--color-tag-text);
 `
